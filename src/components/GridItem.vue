@@ -307,6 +307,8 @@
             if (this.interactObj) {
                 this.interactObj.unset() // destroy interact intance
             }
+            
+           this.eventBus.emit('updateLayout');
         },
         mounted: function () {
             if (this.layout.responsive && this.layout.lastBreakpoint) {
@@ -332,6 +334,7 @@
             this.useCssTransforms = this.layout.useCssTransforms;
             this.useStyleCursor = this.layout.useStyleCursor;
             this.createStyle();
+            this.eventBus.emit('updateLayout');
         },
         watch: {
             isDraggable: function () {

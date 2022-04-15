@@ -147,6 +147,7 @@
 
             self.eventBus.on('resizeEvent', self.resizeEventHandler);
             self.eventBus.on('dragEvent', self.dragEventHandler);
+            self.eventBus.on('updateLayout', self.layoutUpdate);
             self.$emit('layout-created', self.layout);
         },
         beforeUnmount: function(){
